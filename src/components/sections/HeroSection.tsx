@@ -69,6 +69,7 @@ export const HeroSection: React.FC = () => {
               <Button
                 variant="emerald"
                 size="lg"
+                className="px-7 py-3 min-h-[56px] gap-3 whitespace-nowrap"
                 onClick={() => scrollTo('health-categories')}
                 icon={<ArrowRight className="w-4 h-4 text-emerald-300" />}
               >
@@ -77,6 +78,7 @@ export const HeroSection: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
+                className="px-7 py-3 min-h-[56px] gap-3 whitespace-nowrap"
                 onClick={() => scrollTo('understand')}
                 icon={<Info className="w-4 h-4 text-charcoal-500" />}
               >
@@ -98,7 +100,7 @@ export const HeroSection: React.FC = () => {
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   FINANCIAL HEALTH CARD
                 </span>
-                <span className="text-[11px] font-sans font-bold text-emerald-900 bg-emerald-100/80 px-2 py-0.5 rounded">
+                <span className="text-[12px] font-sans font-bold text-emerald-900 bg-emerald-100/80 px-2 py-0.5 rounded">
                   DEMO DATA
                 </span>
               </div>
@@ -106,7 +108,7 @@ export const HeroSection: React.FC = () => {
               {/* Animated Score Display */}
               <div className="flex items-center justify-between bg-white p-5 rounded-2xl border border-charcoal-200/80 shadow-subtle">
                 <div className="space-y-1">
-                  <span className="text-xs font-sans font-semibold uppercase tracking-wider text-charcoal-500">
+                  <span className="text-[13px] font-sans font-semibold uppercase tracking-wider text-charcoal-500">
                     OVERALL SCORE
                   </span>
                   <div className="flex items-baseline gap-1">
@@ -151,24 +153,24 @@ export const HeroSection: React.FC = () => {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <span className="absolute text-xs font-sans font-bold text-emerald-800 tabular-nums">
+                  <span className="absolute text-[13px] font-sans font-bold text-emerald-800 tabular-nums">
                     78%
                   </span>
                 </div>
               </div>
 
               {/* Formal Professional Financial Metric Quick Grid (All Rupees) */}
-              <div className="grid grid-cols-2 gap-3.5 text-xs font-sans">
+              <div className="grid grid-cols-2 gap-3.5 text-[13px] font-sans">
                 {/* Spending */}
                 <div className="p-3.5 bg-white rounded-xl border border-charcoal-200/60 space-y-1.5">
                   <div className="flex items-center justify-between text-charcoal-600 font-sans">
                     <span className="flex items-center gap-1.5 font-medium text-charcoal-700">
                       <Wallet className="w-4 h-4 text-emerald-600" /> Spending
                     </span>
-                    <span className="font-sans font-bold text-xs text-emerald-700 tabular-nums">82</span>
+                    <span className="font-sans font-bold text-[13px] text-emerald-700 tabular-nums">82</span>
                   </div>
                   <p suppressHydrationWarning className="font-sans font-extrabold text-charcoal-950 text-base tracking-tight tabular-nums">
-                    {formatINR(49000)}<span className="text-xs font-normal text-charcoal-500">/mo</span>
+                    {formatINR(49000)}<span className="text-[13px] font-normal text-charcoal-500">/mo</span>
                   </p>
                 </div>
 
@@ -178,7 +180,7 @@ export const HeroSection: React.FC = () => {
                     <span className="flex items-center gap-1.5 font-medium text-charcoal-700">
                       <PiggyBank className="w-4 h-4 text-emerald-600" /> Savings
                     </span>
-                    <span className="font-sans font-bold text-xs text-emerald-700 tabular-nums">76</span>
+                    <span className="font-sans font-bold text-[13px] text-emerald-700 tabular-nums">76</span>
                   </div>
                   <p suppressHydrationWarning className="font-sans font-extrabold text-charcoal-950 text-base tracking-tight tabular-nums">
                     {formatINR(215000)}
@@ -191,7 +193,7 @@ export const HeroSection: React.FC = () => {
                     <span className="flex items-center gap-1.5 font-medium text-charcoal-700">
                       <PieChart className="w-4 h-4 text-teal-600" /> Investments
                     </span>
-                    <span className="font-sans font-bold text-xs text-teal-700 tabular-nums">74</span>
+                    <span className="font-sans font-bold text-[13px] text-teal-700 tabular-nums">74</span>
                   </div>
                   <p suppressHydrationWarning className="font-sans font-extrabold text-charcoal-950 text-base tracking-tight tabular-nums">
                     {formatINR(480000)}
@@ -204,7 +206,7 @@ export const HeroSection: React.FC = () => {
                     <span className="flex items-center gap-1.5 font-medium text-charcoal-700">
                       <Target className="w-4 h-4 text-amber-600" /> Goals
                     </span>
-                    <span className="font-sans font-bold text-xs text-amber-700 tabular-nums">85</span>
+                    <span className="font-sans font-bold text-[13px] text-amber-700 tabular-nums">85</span>
                   </div>
                   <p className="font-sans font-extrabold text-charcoal-950 text-base tracking-tight tabular-nums">
                     2 Active

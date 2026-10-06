@@ -54,10 +54,10 @@ export const FermorFeaturesSection: React.FC<FermorFeaturesSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-semibold uppercase tracking-wider border border-emerald-200">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider border border-emerald-200">
             WHAT FERMOR HELPS YOU DO
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900">
+          <h2 className="section-title">
             From Understanding Your Standings to Executing Your Growth
           </h2>
           <p className="text-base text-charcoal-600 leading-relaxed">
@@ -66,15 +66,15 @@ export const FermorFeaturesSection: React.FC<FermorFeaturesSectionProps> = ({
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
           {features.map((feat, idx) => (
-            <Card key={idx} variant="default" padding="lg" className="space-y-3 hover:border-emerald-300 transition-all">
-              <div className="w-10 h-10 rounded-xl bg-canvas-subtle border border-charcoal-200/60 flex items-center justify-center">
-                {feat.icon}
+            <article key={idx} className="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-x-4 border-t border-charcoal-200 py-6">
+              <div className="pt-0.5 text-emerald-800">{feat.icon}</div>
+              <div className="min-w-0 space-y-2">
+                <h3 className="text-lg font-semibold tracking-tight text-charcoal-900">{feat.title}</h3>
+                <p className="max-w-[52ch] text-sm leading-relaxed text-charcoal-600">{feat.description}</p>
               </div>
-              <h3 className="text-base font-semibold text-charcoal-900">{feat.title}</h3>
-              <p className="text-xs text-charcoal-600 leading-relaxed">{feat.description}</p>
-            </Card>
+            </article>
           ))}
         </div>
 
@@ -82,15 +82,15 @@ export const FermorFeaturesSection: React.FC<FermorFeaturesSectionProps> = ({
         <Card variant="flat" padding="lg" className="space-y-6 border-charcoal-200/80 bg-canvas-subtle">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-charcoal-200/60 pb-4">
             <div className="space-y-1">
-              <span className="text-xs font-mono font-semibold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
+              <span className="text-[13px] font-sans tabular-nums font-semibold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
                 <UserCheck className="w-4 h-4 text-emerald-600" />
                 Explore Fictional Demo Profiles
               </span>
-              <p className="text-xs text-charcoal-600">
+              <p className="text-[13px] text-charcoal-600">
                 Switch profiles to test how Fermor models different financial stages in real time.
               </p>
             </div>
-            <span className="text-[11px] font-mono text-charcoal-400">SELECT TO LOAD</span>
+            <span className="text-[12px] font-sans tabular-nums text-charcoal-400">SELECT TO LOAD</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -108,12 +108,12 @@ export const FermorFeaturesSection: React.FC<FermorFeaturesSectionProps> = ({
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-sm text-charcoal-900">{p.name}</span>
-                    <span className="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    <span className="font-sans tabular-nums text-[13px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                       {p.score}/100
                     </span>
                   </div>
-                  <p className="text-xs text-charcoal-500 font-medium">{p.role}, Age {p.age}</p>
-                  <p className="text-[11px] text-charcoal-600 italic leading-snug">{p.tagline}</p>
+                  <p className="text-[13px] text-charcoal-500 font-medium">{p.role}, Age {p.age}</p>
+                  <p className="text-[12px] text-charcoal-600 italic leading-snug">{p.tagline}</p>
                 </button>
               );
             })}
@@ -126,7 +126,7 @@ export const FermorFeaturesSection: React.FC<FermorFeaturesSectionProps> = ({
             <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
               See your money. Understand your choices. See where they take you.
             </h3>
-            <p className="text-xs sm:text-sm text-charcoal-300 leading-relaxed">
+            <p className="text-[13px] sm:text-sm text-charcoal-300 leading-relaxed">
               Experience financial clarity without generic landing-page fluff. Fermor brings calm precision to your long-term wealth trajectory.
             </p>
           </div>

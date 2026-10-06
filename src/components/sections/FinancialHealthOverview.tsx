@@ -28,7 +28,7 @@ export const FinancialHealthOverview: React.FC<FinancialHealthOverviewProps> = (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-xs font-mono font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
             <span>Stage 1</span>
             <span className="text-charcoal-400">•</span>
             <span className="text-emerald-900">SEE YOUR STANDING</span>
@@ -42,33 +42,33 @@ export const FinancialHealthOverview: React.FC<FinancialHealthOverviewProps> = (
         </div>
 
         {/* Core Overview Card (Score + Metrics Grid) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
           {/* Left: Score Gauge Dial */}
-          <Card variant="highlight" padding="lg" className="lg:col-span-5 flex flex-col items-center justify-center text-center space-y-4">
-            <div className="w-full flex items-center justify-between text-xs text-charcoal-500 font-mono border-b border-emerald-100/60 pb-3">
+          <Card variant="highlight" padding="lg" className="lg:col-span-5 min-w-0 flex flex-col items-center justify-center text-center space-y-4">
+            <div className="w-full flex items-center justify-between text-[13px] text-charcoal-500 font-sans tabular-nums border-b border-emerald-100/60 pb-3">
               <span>FINANCIAL HEALTH INDEX</span>
               <span className="text-emerald-900 font-semibold">CALIBRATED LIVE</span>
             </div>
 
             <ScoreGauge score={score} status={status} delta={scoreDelta} size={200} />
 
-            <div className="pt-2 text-xs text-charcoal-600 max-w-xs font-sans">
+            <div className="pt-2 text-[13px] text-charcoal-600 max-w-xs font-sans">
               <p className="font-semibold text-charcoal-950">
                 {userName}&apos;s profile is evaluated at{' '}
-                <span className="font-bold text-emerald-900 font-mono">{score}/100</span>.
+                <span className="font-bold text-emerald-900 font-sans tabular-nums">{score}/100</span>.
               </p>
-              <p className="text-charcoal-500 text-[11px] mt-1">
+              <p className="text-charcoal-500 text-[12px] mt-1">
                 Based on 4 primary factors: liquidity, savings rate, debt load, and investment velocity.
               </p>
             </div>
           </Card>
 
           {/* Right: Key Financial Metrics Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 auto-rows-fr gap-4 min-w-0">
             {/* Metric 1: Net Worth */}
-            <Card variant="default" padding="md" className="space-y-3 relative overflow-hidden">
+            <Card variant="default" padding="md" className="h-full min-w-0 flex flex-col justify-between gap-5 relative overflow-hidden">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
+                <span className="text-[13px] font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
                   <Wallet className="w-4 h-4 text-emerald-800" />
                   Estimated Net Worth
                 </span>
@@ -78,16 +78,16 @@ export const FinancialHealthOverview: React.FC<FinancialHealthOverviewProps> = (
                 <p suppressHydrationWarning className="metric-headline text-2xl">
                   {formatINR(metrics.netWorth)}
                 </p>
-                <p suppressHydrationWarning className="text-xs text-charcoal-500 mt-1 font-sans">
+                <p suppressHydrationWarning className="text-[13px] text-charcoal-500 mt-1 font-sans">
                   Liquid Assets ({formatINR(metrics.liquidSavings)}) + Investments ({formatINR(metrics.investmentBalance)}) − Debt ({formatINR(metrics.totalDebt)})
                 </p>
               </div>
             </Card>
 
             {/* Metric 2: Monthly Savings Rate */}
-            <Card variant="default" padding="md" className="space-y-3">
+            <Card variant="default" padding="md" className="h-full min-w-0 flex flex-col justify-between gap-5">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
+                <span className="text-[13px] font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
                   <PiggyBank className="w-4 h-4 text-emerald-800" />
                   Savings Retention
                 </span>
@@ -96,18 +96,18 @@ export const FinancialHealthOverview: React.FC<FinancialHealthOverviewProps> = (
               <div>
                 <p suppressHydrationWarning className="metric-headline text-2xl">
                   {formatINR(metrics.monthlyIncome - metrics.monthlyExpenses)}
-                  <span className="text-xs font-normal text-charcoal-500 font-sans"> /mo</span>
+                  <span className="text-[13px] font-normal text-charcoal-500 font-sans"> /mo</span>
                 </p>
-                <p className="text-xs text-charcoal-500 mt-1 font-sans">
+                <p className="text-[13px] text-charcoal-500 mt-1 font-sans">
                   Saving 27% of monthly net cashflow after expense obligations.
                 </p>
               </div>
             </Card>
 
             {/* Metric 3: Emergency Buffer */}
-            <Card variant="default" padding="md" className="space-y-3">
+            <Card variant="default" padding="md" className="h-full min-w-0 flex flex-col justify-between gap-5">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
+                <span className="text-[13px] font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
                   <ShieldCheck className="w-4 h-4 text-emerald-800" />
                   Emergency Buffer
                 </span>
@@ -119,16 +119,16 @@ export const FinancialHealthOverview: React.FC<FinancialHealthOverviewProps> = (
                 <p suppressHydrationWarning className="metric-headline text-2xl">
                   {formatINR(metrics.liquidSavings)}
                 </p>
-                <p suppressHydrationWarning className="text-xs text-charcoal-500 mt-1 font-sans">
+                <p suppressHydrationWarning className="text-[13px] text-charcoal-500 mt-1 font-sans">
                   Covers {metrics.emergencyFundMonths} months of essential expenses ({formatINR(metrics.monthlyExpenses)}/mo).
                 </p>
               </div>
             </Card>
 
             {/* Metric 4: Debt Ratio */}
-            <Card variant="default" padding="md" className="space-y-3">
+            <Card variant="default" padding="md" className="h-full min-w-0 flex flex-col justify-between gap-5">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
+                <span className="text-[13px] font-medium uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5 font-sans">
                   <CreditCard className="w-4 h-4 text-amber-700" />
                   Consumer Debt Load
                 </span>
@@ -140,7 +140,7 @@ export const FinancialHealthOverview: React.FC<FinancialHealthOverviewProps> = (
                 <p suppressHydrationWarning className="metric-headline text-2xl">
                   {formatINR(metrics.totalDebt)}
                 </p>
-                <p suppressHydrationWarning className="text-xs text-charcoal-500 mt-1 font-sans">
+                <p suppressHydrationWarning className="text-[13px] text-charcoal-500 mt-1 font-sans">
                   Monthly debt servicing: {formatINR(metrics.monthlyDebtPayment)}/mo ({metrics.debtToIncomePct}% of gross income).
                 </p>
               </div>

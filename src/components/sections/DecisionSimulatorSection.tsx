@@ -55,7 +55,7 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-xs font-mono font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
               <span>Stage 3</span>
               <span className="text-charcoal-400">•</span>
               <span className="text-emerald-900">DECIDE & EXPERIMENT</span>
@@ -85,11 +85,11 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
           {/* Left: Interactive Sliders Controls (7 cols) */}
           <Card variant="default" padding="lg" className="lg:col-span-7 space-y-8">
             <div className="flex items-center justify-between border-b border-charcoal-100 pb-4">
-              <span className="text-xs font-semibold uppercase tracking-wider text-charcoal-600 flex items-center gap-2">
+              <span className="text-[13px] font-semibold uppercase tracking-wider text-charcoal-600 flex items-center gap-2">
                 <SlidersHorizontal className="w-4 h-4 text-emerald-800" />
                 Variable Allocation Adjusters
               </span>
-              <span className="text-[11px] font-mono text-charcoal-400">LIVE RECALCULATION</span>
+              <span className="text-[12px] font-sans tabular-nums text-charcoal-400">LIVE RECALCULATION</span>
             </div>
 
             {/* Slider 1: Monthly Savings */}
@@ -147,7 +147,7 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
 
             {/* Life Event Toggle Selector */}
             <div className="space-y-3 pt-4 border-t border-charcoal-100">
-              <label className="text-xs font-semibold uppercase tracking-wider text-charcoal-500 block font-mono">
+              <label className="text-[13px] font-semibold uppercase tracking-wider text-charcoal-500 block font-sans tabular-nums">
                 Simulate Major Life Event
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -170,8 +170,8 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
                         {isSelected && <Badge variant="emerald" size="sm">Active</Badge>}
                       </div>
                       <div>
-                        <p className="font-bold text-xs text-charcoal-950 font-sans">{evt.label}</p>
-                        <p className="text-[10px] text-charcoal-500">{evt.desc}</p>
+                        <p className="font-bold text-[13px] text-charcoal-950 font-sans">{evt.label}</p>
+                        <p className="text-[12px] text-charcoal-500">{evt.desc}</p>
                       </div>
                     </button>
                   );
@@ -181,19 +181,19 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
           </Card>
 
           {/* Right: Live Impact Feedback Card (5 cols) */}
-          <Card variant="highlight" padding="lg" className="lg:col-span-5 space-y-6 sticky top-20">
+          <Card variant="highlight" padding="lg" className="lg:col-span-5 space-y-6 lg:sticky lg:top-20">
             <div className="flex items-center justify-between border-b border-emerald-200/60 pb-3">
-              <span className="text-xs font-semibold text-emerald-900 flex items-center gap-1.5">
+              <span className="text-[13px] font-semibold text-emerald-900 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-emerald-800" />
                 Simulated Impact Summary
               </span>
-              <span className="text-xs font-mono font-bold text-emerald-900">
+              <span className="text-[13px] font-sans tabular-nums font-bold text-emerald-900">
                 SCORE: {newScore} / 100
               </span>
             </div>
 
             <div className="text-center py-4 space-y-2">
-              <span className="text-xs font-mono uppercase tracking-wider text-charcoal-500 font-semibold">
+              <span className="text-[13px] font-sans tabular-nums uppercase tracking-wider text-charcoal-500 font-semibold">
                 HEALTH INDEX DELTA
               </span>
               <div className="flex items-center justify-center gap-2">
@@ -202,7 +202,7 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
                 </span>
                 {scoreDelta !== 0 && (
                   <span
-                    className={`text-sm font-mono font-bold px-2.5 py-1 rounded-full ${
+                    className={`text-sm font-sans tabular-nums font-bold px-2.5 py-1 rounded-full ${
                       scoreDelta > 0
                         ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
                         : 'bg-rose-100 text-rose-800 border border-rose-300'
@@ -212,7 +212,7 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
                   </span>
                 )}
               </div>
-              <p className="text-xs text-charcoal-600 max-w-xs mx-auto pt-1 font-sans">
+              <p className="text-[13px] text-charcoal-600 max-w-xs mx-auto pt-1 font-sans">
                 {scoreDelta > 0
                   ? 'Your simulated changes strengthen your liquidity buffer and accelerate net worth accumulation.'
                   : scoreDelta < 0
@@ -222,22 +222,22 @@ export const DecisionSimulatorSection: React.FC<DecisionSimulatorSectionProps> =
             </div>
 
             {/* Impact Highlights List */}
-            <div className="space-y-3 pt-2 text-xs border-t border-emerald-100 font-sans">
+            <div className="space-y-3 pt-2 text-[13px] border-t border-emerald-100 font-sans">
               <div className="flex items-center justify-between p-2.5 rounded-lg bg-white border border-charcoal-200/60">
                 <span className="text-charcoal-600">Simulated Extra Monthly Savings:</span>
-                <span suppressHydrationWarning className="font-mono font-bold text-charcoal-950">
+                <span suppressHydrationWarning className="font-sans tabular-nums font-bold text-charcoal-950">
                   +{formatINR(params.monthlySavingsDelta + params.monthlyInvestmentDelta)}/mo
                 </span>
               </div>
               <div className="flex items-center justify-between p-2.5 rounded-lg bg-white border border-charcoal-200/60">
                 <span className="text-charcoal-600">Debt Payoff Boost:</span>
-                <span suppressHydrationWarning className="font-mono font-bold text-charcoal-950">
+                <span suppressHydrationWarning className="font-sans tabular-nums font-bold text-charcoal-950">
                   +{formatINR(params.extraDebtPayment)}/mo
                 </span>
               </div>
               <div className="flex items-center justify-between p-2.5 rounded-lg bg-white border border-charcoal-200/60">
                 <span className="text-charcoal-600">Life Event Active:</span>
-                <span className="font-mono font-semibold text-emerald-900 uppercase">
+                <span className="font-sans tabular-nums font-semibold text-emerald-900 uppercase">
                   {params.lifeEvent.replace('_', ' ')}
                 </span>
               </div>

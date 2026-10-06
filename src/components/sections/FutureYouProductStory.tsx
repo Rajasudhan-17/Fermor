@@ -119,12 +119,12 @@ export const FutureYouProductStory: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-mono font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
               <span>PHASE 4 — FUTURE YOU</span>
               <span className="text-emerald-400">•</span>
               <span>LONG-TERM TRAJECTORY</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900">
+            <h2 className="section-title">
               See where today&apos;s choices could take you.
             </h2>
             <p className="text-base text-charcoal-600 leading-relaxed">
@@ -132,7 +132,7 @@ export const FutureYouProductStory: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 bg-white p-1 rounded-xl border border-charcoal-200 shadow-subtle text-xs font-mono">
+          <div className="flex items-center gap-2 bg-white p-1 rounded-xl border border-charcoal-200 shadow-subtle text-[13px] font-sans tabular-nums">
             {[1, 3, 5].map((y) => (
               <button
                 key={y}
@@ -154,10 +154,10 @@ export const FutureYouProductStory: React.FC = () => {
           {/* Controls Left Column (5 cols) */}
           <Card variant="default" padding="lg" className="lg:col-span-5 space-y-6">
             <div className="flex items-center justify-between border-b border-charcoal-100 pb-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-charcoal-500">
+              <span className="text-[13px] font-sans tabular-nums font-bold uppercase tracking-wider text-charcoal-500">
                 TIMELINE SIMULATION CONTROLS
               </span>
-              <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
+              <span className="text-[12px] font-sans tabular-nums font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
                 LIVE CONNECTED
               </span>
             </div>
@@ -185,7 +185,7 @@ export const FutureYouProductStory: React.FC = () => {
               onChange={(val) => setGoalAmount(val)}
             />
 
-            <div className="p-3 rounded-xl bg-canvas-subtle border border-charcoal-200/60 text-[11px] text-charcoal-500 space-y-1">
+            <div className="p-3 rounded-xl bg-canvas-subtle border border-charcoal-200/60 text-[12px] text-charcoal-500 space-y-1">
               <p className="font-semibold text-charcoal-700 flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 Illustrative Rate Assumption
@@ -199,11 +199,11 @@ export const FutureYouProductStory: React.FC = () => {
           {/* Visualization Right Column (7 cols) */}
           <Card variant="highlight" padding="lg" className="lg:col-span-7 space-y-6">
             <div className="flex items-center justify-between border-b border-emerald-200/60 pb-3">
-              <span className="text-xs font-semibold text-emerald-900 flex items-center gap-1.5">
+              <span className="text-[13px] font-semibold text-emerald-900 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-emerald-600" />
                 5-Year Compounded Trajectory Curve
               </span>
-              <span suppressHydrationWarning className="text-xs font-mono font-bold text-emerald-800">
+              <span suppressHydrationWarning className="text-[13px] font-sans tabular-nums font-bold text-emerald-800">
                 5-YR ACCUMULATION: {formatINR(yr5Amount)}
               </span>
             </div>
@@ -219,10 +219,10 @@ export const FutureYouProductStory: React.FC = () => {
                       if (active && payload && payload.length) {
                         const amount = payload[0].value as number;
                         return (
-                          <div className="bg-charcoal-900 text-white p-3 rounded-xl shadow-hover text-xs space-y-1 font-mono border border-charcoal-700">
+                          <div className="bg-charcoal-900 text-white p-3 rounded-xl shadow-hover text-[13px] space-y-1 font-sans tabular-nums border border-charcoal-700">
                             <p className="text-charcoal-300 font-semibold">{payload[0].payload.label} Projected Balance</p>
                             <p className="text-emerald-400 font-bold text-sm">{formatINR(amount)}</p>
-                            <p className="text-[10px] text-charcoal-400">Goal Target: {formatINR(goalAmount)}</p>
+                            <p className="text-[12px] text-charcoal-400">Goal Target: {formatINR(goalAmount)}</p>
                           </div>
                         );
                       }
@@ -269,20 +269,20 @@ export const FutureYouProductStory: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-bold uppercase text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  <span className="text-[12px] font-sans tabular-nums font-bold uppercase text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                     {step.label}
                   </span>
-                  <span className="text-xs font-mono font-bold text-charcoal-900">
+                  <span className="text-[13px] font-sans tabular-nums font-bold text-charcoal-900">
                     {step.progress}% Goal
                   </span>
                 </div>
 
                 <div>
-                  <p suppressHydrationWarning className="text-2xl font-extrabold font-mono text-charcoal-900">
+                  <p suppressHydrationWarning className="text-2xl font-extrabold font-sans tabular-nums text-charcoal-900">
                     {formatINR(step.amount)}
                   </p>
-                  <p className="text-xs font-semibold text-charcoal-800 mt-1">{step.milestone}</p>
-                  <p suppressHydrationWarning className="text-[11px] text-charcoal-500 mt-0.5">{step.detail}</p>
+                  <p className="text-[13px] font-semibold text-charcoal-800 mt-1">{step.milestone}</p>
+                  <p suppressHydrationWarning className="text-[12px] text-charcoal-500 mt-0.5">{step.detail}</p>
                 </div>
 
                 <div className="w-full bg-charcoal-100 h-1.5 rounded-full overflow-hidden">
@@ -300,10 +300,10 @@ export const FutureYouProductStory: React.FC = () => {
       {/* SECTION 2: Product Philosophy — "From confusion to confidence." */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="max-w-3xl mx-auto text-center space-y-3">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-xs font-mono font-semibold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
             PRODUCT PHILOSOPHY
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900">
+          <h2 className="section-title mx-auto">
             From confusion to confidence.
           </h2>
           <p className="text-base text-charcoal-600 leading-relaxed">
@@ -325,7 +325,7 @@ export const FutureYouProductStory: React.FC = () => {
                 className="bg-white p-6 rounded-2xl border border-charcoal-200/80 shadow-subtle space-y-4 hover:shadow-card transition-all group"
               >
                 <div className="flex items-center justify-between">
-                  <span className="w-10 h-10 rounded-xl bg-charcoal-900 text-emerald-400 font-mono font-bold text-sm flex items-center justify-center shadow-sm">
+                  <span className="w-10 h-10 rounded-xl bg-charcoal-900 text-emerald-400 font-sans tabular-nums font-bold text-sm flex items-center justify-center shadow-sm">
                     {step.num}
                   </span>
                   <Badge variant="emerald" size="sm">Stage {idx + 1}</Badge>
@@ -335,10 +335,10 @@ export const FutureYouProductStory: React.FC = () => {
                   <h3 className="text-xl font-extrabold tracking-tight text-charcoal-900 group-hover:text-emerald-800 transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-xs font-semibold text-emerald-800 font-mono">{step.subtitle}</p>
+                  <p className="text-[13px] font-semibold text-emerald-800 font-sans tabular-nums">{step.subtitle}</p>
                 </div>
 
-                <p className="text-xs text-charcoal-600 leading-relaxed">{step.desc}</p>
+                <p className="text-[13px] text-charcoal-600 leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -351,72 +351,72 @@ export const FutureYouProductStory: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-emerald-200/80 pb-6">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[11px] font-mono font-bold uppercase">
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[12px] font-sans tabular-nums font-bold uppercase">
                   <UserCheck className="w-3.5 h-3.5 text-emerald-700" />
                   DEMO USER SPOTLIGHT
                 </span>
-                <span className="text-[10px] font-mono text-charcoal-400 italic">(Fictional Demo Profile)</span>
+                <span className="text-[12px] font-sans tabular-nums text-charcoal-400 italic">(Fictional Demo Profile)</span>
               </div>
               <h3 className="text-3xl font-extrabold text-charcoal-900">
                 Meet Alex
               </h3>
-              <p className="text-xs text-charcoal-600">
+              <p className="text-[13px] text-charcoal-600">
                 Product Strategist • Age 29 • Building Emergency Reserves
               </p>
             </div>
 
             <div className="flex items-center gap-3 bg-white p-3 rounded-xl border border-charcoal-200 shadow-subtle shrink-0">
               <div className="text-right">
-                <span className="text-[10px] font-mono uppercase text-charcoal-400 block">Financial Health Score</span>
-                <span className="text-2xl font-black font-mono text-charcoal-900">74<span className="text-xs text-charcoal-400">/100</span></span>
+                <span className="text-[12px] font-sans tabular-nums uppercase text-charcoal-400 block">Financial Health Score</span>
+                <span className="text-2xl font-black font-sans tabular-nums text-charcoal-900">74<span className="text-[13px] text-charcoal-400">/100</span></span>
               </div>
               <Badge variant="positive" size="sm">Good Standing</Badge>
             </div>
           </div>
 
-          <div suppressHydrationWarning className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono">
+          <div suppressHydrationWarning className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-[13px] font-sans tabular-nums">
             <div className="p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-              <span className="text-charcoal-400 text-[10px] uppercase font-semibold">Monthly Income</span>
-              <p className="text-xl font-bold text-charcoal-900">₹50,000<span className="text-xs font-normal text-charcoal-500">/mo</span></p>
-              <p className="text-[11px] text-charcoal-500 font-sans">Net take-home salary</p>
+              <span className="text-charcoal-400 text-[12px] uppercase font-semibold">Monthly Income</span>
+              <p className="text-xl font-bold text-charcoal-900">₹50,000<span className="text-[13px] font-normal text-charcoal-500">/mo</span></p>
+              <p className="text-[12px] text-charcoal-500 font-sans">Net take-home salary</p>
             </div>
 
             <div className="p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-              <span className="text-charcoal-400 text-[10px] uppercase font-semibold">Liquid Savings</span>
+              <span className="text-charcoal-400 text-[12px] uppercase font-semibold">Liquid Savings</span>
               <p className="text-xl font-bold text-charcoal-900">₹3,50,000</p>
-              <p className="text-[11px] text-charcoal-500 font-sans">Stored in high-yield account</p>
+              <p className="text-[12px] text-charcoal-500 font-sans">Stored in high-yield account</p>
             </div>
 
             <div className="p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-              <span className="text-charcoal-400 text-[10px] uppercase font-semibold">Primary Goal</span>
+              <span className="text-charcoal-400 text-[12px] uppercase font-semibold">Primary Goal</span>
               <p className="text-xl font-bold text-emerald-900">Emergency Fund</p>
-              <p className="text-[11px] text-emerald-700 font-sans">Target: ₹5,00,000 (70% done)</p>
+              <p className="text-[12px] text-emerald-700 font-sans">Target: ₹5,00,000 (70% done)</p>
             </div>
 
             <div className="p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-              <span className="text-charcoal-400 text-[10px] uppercase font-semibold">Overall Index</span>
+              <span className="text-charcoal-400 text-[12px] uppercase font-semibold">Overall Index</span>
               <p className="text-xl font-bold text-charcoal-900">74 / 100</p>
-              <p className="text-[11px] text-charcoal-500 font-sans">Optimizable cashflow</p>
+              <p className="text-[12px] text-charcoal-500 font-sans">Optimizable cashflow</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             <div className="p-4 rounded-xl bg-white border border-charcoal-200/80 space-y-2">
-              <h4 className="text-xs font-mono font-bold uppercase text-charcoal-800 flex items-center gap-1.5">
+              <h4 className="text-[13px] font-sans tabular-nums font-bold uppercase text-charcoal-800 flex items-center gap-1.5">
                 <Compass className="w-4 h-4 text-emerald-600" />
                 Alex&apos;s Main Financial Opportunity
               </h4>
-              <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+              <p className="text-[13px] text-charcoal-600 leading-relaxed font-sans">
                 Increasing Alex&apos;s monthly savings from <strong className="text-charcoal-900">₹4,000</strong> to <strong className="text-emerald-800">₹7,000</strong> closes his ₹1,50,000 emergency fund gap <strong className="text-emerald-900">14 months earlier</strong>, while preserving 100% of his essential living comfort.
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 space-y-2">
-              <h4 className="text-xs font-mono font-bold uppercase text-emerald-900 flex items-center gap-1.5">
+              <h4 className="text-[13px] font-sans tabular-nums font-bold uppercase text-emerald-900 flex items-center gap-1.5">
                 <Zap className="w-4 h-4 text-emerald-600" />
                 Suggested Next Action for Alex
               </h4>
-              <p className="text-xs text-emerald-950 leading-relaxed font-medium font-sans">
+              <p className="text-[13px] text-emerald-950 leading-relaxed font-medium font-sans">
                 Automate a ₹3,000/mo payday auto-sweep directly into high-yield emergency vaults to remove manual spending temptation.
               </p>
             </div>

@@ -47,12 +47,12 @@ export const ScoreDriversSection: React.FC<ScoreDriversSectionProps> = ({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-xs font-mono font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
               <span>Stage 2</span>
               <span className="text-charcoal-400">•</span>
               <span className="text-emerald-700">UNDERSTAND THE DRIVERS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900">
+            <h2 className="section-title">
               Why Your Score is {score}/100
             </h2>
             <p className="text-base text-charcoal-600 leading-relaxed">
@@ -60,7 +60,7 @@ export const ScoreDriversSection: React.FC<ScoreDriversSectionProps> = ({
             </p>
           </div>
 
-          <div className="shrink-0 flex items-center gap-2 text-xs text-charcoal-500 bg-white px-3 py-2 rounded-xl border border-charcoal-200/80 shadow-subtle">
+          <div className="shrink-0 flex items-center gap-2 text-[13px] text-charcoal-500 bg-white px-3 py-2 rounded-xl border border-charcoal-200/80 shadow-subtle">
             <Info className="w-4 h-4 text-emerald-600" />
             <span>Click any driver card for recommendations</span>
           </div>
@@ -82,7 +82,7 @@ export const ScoreDriversSection: React.FC<ScoreDriversSectionProps> = ({
                   <div className="flex items-center justify-between">
                     {getStatusBadge(driver.status)}
                     <span
-                      className={`font-mono text-xs font-bold px-2 py-0.5 rounded ${
+                      className={`font-sans tabular-nums text-[13px] font-bold px-2 py-0.5 rounded ${
                         isPositive
                           ? 'bg-emerald-100 text-emerald-800'
                           : 'bg-rose-100 text-rose-800'
@@ -97,13 +97,13 @@ export const ScoreDriversSection: React.FC<ScoreDriversSectionProps> = ({
                       {driver.title}
                       <ChevronRight className="w-4 h-4 text-charcoal-400 group-hover:translate-x-1 transition-transform" />
                     </h3>
-                    <p className="text-xs text-charcoal-600 mt-1.5 leading-relaxed line-clamp-2">
+                    <p className="text-[13px] text-charcoal-600 mt-1.5 leading-relaxed line-clamp-2">
                       {driver.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-charcoal-100 flex items-center justify-between text-xs font-mono">
+                <div className="pt-3 border-t border-charcoal-100 flex items-center justify-between text-[13px] font-sans tabular-nums">
                   <span className="text-charcoal-500">Current: <strong className="text-charcoal-900">{driver.currentValue}</strong></span>
                   <span className="text-emerald-700">Target: <strong className="text-emerald-900">{driver.targetValue}</strong></span>
                 </div>
@@ -124,7 +124,7 @@ export const ScoreDriversSection: React.FC<ScoreDriversSectionProps> = ({
               >
                 <div className="flex items-center justify-between border-b border-charcoal-100 pb-4">
                   <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase text-charcoal-400 font-semibold tracking-wider">
+                    <span className="text-[12px] font-sans tabular-nums uppercase text-charcoal-400 font-semibold tracking-wider">
                       Driver Deep-Dive Analysis
                     </span>
                     <h3 className="text-xl font-bold text-charcoal-900">
@@ -141,32 +141,32 @@ export const ScoreDriversSection: React.FC<ScoreDriversSectionProps> = ({
 
                 <div className="space-y-4">
                   <div className="bg-canvas-subtle p-3.5 rounded-xl border border-charcoal-200/60 space-y-1.5">
-                    <span className="text-xs font-semibold text-charcoal-700 flex items-center gap-1.5">
+                    <span className="text-[13px] font-semibold text-charcoal-700 flex items-center gap-1.5">
                       <Target className="w-4 h-4 text-emerald-600" />
                       Current Benchmark Status
                     </span>
-                    <p className="text-xs text-charcoal-600 leading-relaxed">
+                    <p className="text-[13px] text-charcoal-600 leading-relaxed">
                       {selectedDriver.description}
                     </p>
                   </div>
 
                   <div className="bg-emerald-50/70 p-4 rounded-xl border border-emerald-200 space-y-2">
-                    <span className="text-xs font-semibold text-emerald-900 flex items-center gap-1.5">
+                    <span className="text-[13px] font-semibold text-emerald-900 flex items-center gap-1.5">
                       <Sparkles className="w-4 h-4 text-emerald-600" />
                       Fermor Recommendation Engine
                     </span>
-                    <p className="text-xs text-emerald-950 leading-relaxed font-medium">
+                    <p className="text-[13px] text-emerald-950 leading-relaxed font-medium">
                       {selectedDriver.recommendation}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 text-xs font-mono pt-2">
+                  <div className="grid grid-cols-2 gap-3 text-[13px] font-sans tabular-nums pt-2">
                     <div className="p-3 rounded-lg bg-charcoal-50 border border-charcoal-200/60">
-                      <span className="text-charcoal-400 block text-[10px] uppercase">Current Standing</span>
+                      <span className="text-charcoal-400 block text-[12px] uppercase">Current Standing</span>
                       <span className="font-bold text-charcoal-900 text-sm">{selectedDriver.currentValue}</span>
                     </div>
                     <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-200">
-                      <span className="text-emerald-700 block text-[10px] uppercase">Recommended Target</span>
+                      <span className="text-emerald-700 block text-[12px] uppercase">Recommended Target</span>
                       <span className="font-bold text-emerald-900 text-sm">{selectedDriver.targetValue}</span>
                     </div>
                   </div>

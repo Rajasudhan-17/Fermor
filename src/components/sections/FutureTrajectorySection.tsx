@@ -43,7 +43,7 @@ export const FutureTrajectorySection: React.FC<FutureTrajectorySectionProps> = (
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-xs font-mono font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
               <span>Stage 4</span>
               <span className="text-charcoal-400">•</span>
               <span className="text-emerald-900">SEE WHERE THEY TAKE YOU</span>
@@ -57,7 +57,7 @@ export const FutureTrajectorySection: React.FC<FutureTrajectorySectionProps> = (
           </div>
 
           {/* Time Horizon Selector */}
-          <div className="flex items-center gap-1.5 bg-white p-1 rounded-xl border border-charcoal-200 shadow-subtle font-mono text-xs">
+          <div className="flex items-center gap-1.5 bg-white p-1 rounded-xl border border-charcoal-200 shadow-subtle font-sans tabular-nums text-[13px]">
             {[5, 10, 20].map((years) => (
               <button
                 key={years}
@@ -77,38 +77,38 @@ export const FutureTrajectorySection: React.FC<FutureTrajectorySectionProps> = (
         {/* Dynamic Delta Summary Banner */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Card variant="highlight" padding="md" className="space-y-1">
-            <span className="text-[11px] font-mono font-semibold uppercase text-emerald-900">
+            <span className="text-[12px] font-sans tabular-nums font-semibold uppercase text-emerald-900">
               {horizonYears}-Year Simulated Net Worth Delta
             </span>
             <p suppressHydrationWarning className="text-2xl font-extrabold font-display tabular-nums text-emerald-950 flex items-center gap-2">
               {deltaNetWorth >= 0 ? `+${formatINR(deltaNetWorth)}` : formatINR(deltaNetWorth)}
               <ArrowUpRight className="w-5 h-5 text-emerald-800" />
             </p>
-            <p className="text-xs text-emerald-800 font-sans">
+            <p className="text-[13px] text-emerald-800 font-sans">
               Difference between simulated choices and default baseline at Year {horizonYears}.
             </p>
           </Card>
 
           <Card variant="default" padding="md" className="space-y-1">
-            <span className="text-[11px] font-mono font-semibold uppercase text-charcoal-400">
+            <span className="text-[12px] font-sans tabular-nums font-semibold uppercase text-charcoal-400">
               Baseline Projected (Year {horizonYears})
             </span>
             <p suppressHydrationWarning className="text-2xl font-bold font-display tabular-nums text-charcoal-700">
               {formatINR(finalProjection?.baselineNetWorth || 0)}
             </p>
-            <p className="text-xs text-charcoal-500 font-sans">
+            <p className="text-[13px] text-charcoal-500 font-sans">
               Continuing current habits without adjustments.
             </p>
           </Card>
 
           <Card variant="default" padding="md" className="space-y-1">
-            <span className="text-[11px] font-mono font-semibold uppercase text-emerald-900">
+            <span className="text-[12px] font-sans tabular-nums font-semibold uppercase text-emerald-900">
               Simulated Projected (Year {horizonYears})
             </span>
             <p suppressHydrationWarning className="text-2xl font-bold font-display tabular-nums text-emerald-950">
               {formatINR(finalProjection?.simulatedNetWorth || 0)}
             </p>
-            <p className="text-xs text-charcoal-500 font-sans">
+            <p className="text-[13px] text-charcoal-500 font-sans">
               Projected net wealth under simulated scenario.
             </p>
           </Card>
@@ -121,12 +121,12 @@ export const FutureTrajectorySection: React.FC<FutureTrajectorySectionProps> = (
               <h3 className="font-bold text-charcoal-950 text-base font-sans">
                 Net Worth Growth Horizon (Age {filteredProjections[0]?.age} → Age {finalProjection?.age})
               </h3>
-              <p className="text-xs text-charcoal-500 font-sans">
+              <p className="text-[13px] text-charcoal-500 font-sans">
                 Compounded growth calculated assuming 6.5% baseline return vs allocation-adjusted return.
               </p>
             </div>
 
-            <div className="flex items-center gap-4 text-xs font-mono">
+            <div className="flex items-center gap-4 text-[13px] font-sans tabular-nums">
               <span className="inline-flex items-center gap-1.5 text-charcoal-500">
                 <span className="w-3 h-0.5 bg-charcoal-400 border border-dashed border-charcoal-600 inline-block" />
                 Baseline Path
@@ -169,21 +169,21 @@ export const FutureTrajectorySection: React.FC<FutureTrajectorySectionProps> = (
                     if (active && payload && payload.length) {
                       const data = payload[0].payload as YearProjection;
                       return (
-                        <div className="bg-charcoal-900 text-white p-3.5 rounded-xl shadow-hover text-xs space-y-2 font-sans border border-charcoal-700 max-w-xs">
-                          <div className="flex justify-between items-center border-b border-charcoal-700 pb-1.5 font-mono text-[11px] text-charcoal-300">
+                        <div className="bg-charcoal-900 text-white p-3.5 rounded-xl shadow-hover text-[13px] space-y-2 font-sans border border-charcoal-700 max-w-xs">
+                          <div className="flex justify-between items-center border-b border-charcoal-700 pb-1.5 font-sans tabular-nums text-[12px] text-charcoal-300">
                             <span>Year {data.year} (Age {data.age})</span>
                             {data.milestone && <span className="text-emerald-400 font-bold">{data.milestone}</span>}
                           </div>
                           <div className="space-y-1">
-                            <div className="flex justify-between gap-4 font-mono">
+                            <div className="flex justify-between gap-4 font-sans tabular-nums">
                               <span className="text-charcoal-400">Baseline Net Worth:</span>
                               <span className="font-bold text-charcoal-200">{formatINR(data.baselineNetWorth)}</span>
                             </div>
-                            <div className="flex justify-between gap-4 font-mono">
+                            <div className="flex justify-between gap-4 font-sans tabular-nums">
                               <span className="text-emerald-400">Simulated Net Worth:</span>
                               <span className="font-bold text-emerald-400">{formatINR(data.simulatedNetWorth)}</span>
                             </div>
-                            <div className="flex justify-between gap-4 font-mono text-[10px] text-charcoal-400 pt-1 border-t border-charcoal-800">
+                            <div className="flex justify-between gap-4 font-sans tabular-nums text-[12px] text-charcoal-400 pt-1 border-t border-charcoal-800">
                               <span>Simulated Debt Balance:</span>
                               <span>{formatINR(data.simulatedDebt)}</span>
                             </div>
@@ -219,7 +219,7 @@ export const FutureTrajectorySection: React.FC<FutureTrajectorySectionProps> = (
         {/* Milestone Cards Carousel / Grid */}
         {milestones.length > 0 && (
           <div className="space-y-3">
-            <h3 className="text-xs font-mono font-semibold uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5">
+            <h3 className="text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider text-charcoal-500 flex items-center gap-1.5">
               <Award className="w-4 h-4 text-emerald-800" />
               Projected Financial Milestones Achieved
             </h3>
@@ -227,13 +227,13 @@ export const FutureTrajectorySection: React.FC<FutureTrajectorySectionProps> = (
               {milestones.map((m) => (
                 <Card key={m.year} variant="flat" padding="sm" className="space-y-1.5 border-emerald-200/80 bg-emerald-50/40">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold uppercase text-emerald-900">
+                    <span className="text-[12px] font-sans tabular-nums font-bold uppercase text-emerald-900">
                       Year {m.year} (Age {m.age})
                     </span>
                     <Badge variant="positive" size="sm">Milestone</Badge>
                   </div>
-                  <p className="font-semibold text-xs text-charcoal-950 font-sans">{m.milestone}</p>
-                  <p suppressHydrationWarning className="text-[11px] font-mono text-emerald-950">
+                  <p className="font-semibold text-[13px] text-charcoal-950 font-sans">{m.milestone}</p>
+                  <p suppressHydrationWarning className="text-[12px] font-sans tabular-nums text-emerald-950">
                     Net Worth: {formatINR(m.simulatedNetWorth)}
                   </p>
                 </Card>

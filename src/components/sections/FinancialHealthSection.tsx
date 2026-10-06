@@ -161,9 +161,9 @@ export const FinancialHealthSection: React.FC = () => {
 
           {/* Editorial Summary Box */}
           <Card variant="flat" padding="lg" className="border-charcoal-200 bg-canvas-subtle/80 space-y-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-charcoal-200/80 pb-6">
-              <div className="space-y-1">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-charcoal-500">
+            <div className="grid grid-cols-1 md:grid-cols-[minmax(180px,0.72fr)_minmax(0,2fr)] gap-6 border-b border-charcoal-200/80 pb-6">
+              <div className="space-y-1 md:border-r md:border-charcoal-200/80 md:pr-6">
+                <span className="text-[13px] font-sans tabular-nums font-bold uppercase tracking-wider text-charcoal-500">
                   OVERALL INDEX STANDING
                 </span>
                 <div className="flex items-baseline gap-2">
@@ -176,24 +176,24 @@ export const FinancialHealthSection: React.FC = () => {
               </div>
 
               {/* Summary Highlights Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-sans">
-                <div className="p-3.5 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-charcoal-400 font-semibold block">Strongest Area</span>
-                  <span className="font-bold text-charcoal-950 text-sm flex items-center gap-1.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 text-[13px] font-sans min-w-0">
+                <div className="min-w-0 p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-2">
+                  <span className="text-[12px] font-sans tabular-nums uppercase text-charcoal-400 font-semibold block">Strongest Area</span>
+                  <span className="font-semibold text-charcoal-950 text-sm flex items-center gap-2 leading-snug">
                     <ShieldCheck className="w-4 h-4 text-emerald-800" /> Spending (82/100)
                   </span>
                 </div>
 
-                <div className="p-3.5 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-charcoal-400 font-semibold block">Biggest Opportunity</span>
-                  <span className="font-bold text-charcoal-950 text-sm flex items-center gap-1.5">
+                <div className="min-w-0 p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-2">
+                  <span className="text-[12px] font-sans tabular-nums uppercase text-charcoal-400 font-semibold block">Biggest Opportunity</span>
+                  <span className="font-semibold text-charcoal-950 text-sm flex items-center gap-2 leading-snug">
                     <TrendingUp className="w-4 h-4 text-emerald-800" /> Savings (76/100)
                   </span>
                 </div>
 
-                <div className="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-emerald-900 font-bold block">Next Best Move</span>
-                  <span className="font-bold text-emerald-950 text-xs">Build your emergency reserve</span>
+                <div className="min-w-0 p-4 bg-emerald-50 rounded-xl border border-emerald-200 space-y-2 sm:col-span-2 xl:col-span-1">
+                  <span className="text-[12px] font-sans tabular-nums uppercase text-emerald-900 font-bold block">Next Best Move</span>
+                  <span className="font-semibold text-emerald-950 text-[13px] leading-snug">Build your emergency reserve</span>
                 </div>
               </div>
             </div>
@@ -202,24 +202,24 @@ export const FinancialHealthSection: React.FC = () => {
 
         {/* FIVE FINANCIAL PILLARS */}
         <div className="space-y-6">
-          <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-charcoal-500">
+          <h3 className="text-[13px] font-sans tabular-nums font-bold uppercase tracking-wider text-charcoal-500">
             INDIVIDUAL FINANCIAL PILLAR BREAKDOWN
           </h3>
 
-          <div className="space-y-5">
+          <div className="space-y-3">
             {PILLARS.map((pillar) => {
               const isExpanded = expandedId === pillar.id;
               return (
                 <div
                   key={pillar.id}
-                  className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
+                  className={`bg-white rounded-xl border transition-all duration-200 overflow-hidden ${
                     isExpanded
                       ? 'border-emerald-300 shadow-card ring-1 ring-emerald-500/10'
                       : 'border-charcoal-200 hover:border-charcoal-300 shadow-subtle'
                   }`}
                 >
                   {/* Pillar Header & Main Row */}
-                  <div className="p-6 space-y-4">
+                  <div className="p-5 sm:p-6 space-y-4">
                     {/* Top Row: Category + Amount + Score */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div className="flex items-center gap-3.5">
@@ -235,7 +235,7 @@ export const FinancialHealthSection: React.FC = () => {
                               {pillar.status}
                             </Badge>
                           </div>
-                          <p suppressHydrationWarning className="text-xs font-mono font-bold text-charcoal-600 mt-0.5">
+                          <p suppressHydrationWarning className="text-[13px] font-sans tabular-nums font-bold text-charcoal-600 mt-0.5">
                             {pillar.amountLabel}
                           </p>
                         </div>
@@ -245,7 +245,7 @@ export const FinancialHealthSection: React.FC = () => {
                         <span className="font-sans font-extrabold text-2xl text-charcoal-950 tabular-nums">
                           {pillar.score}
                         </span>
-                        <span className="text-xs font-mono text-charcoal-400">/ 100</span>
+                        <span className="text-[13px] font-sans tabular-nums text-charcoal-400">/ 100</span>
                       </div>
                     </div>
 
@@ -273,7 +273,7 @@ export const FinancialHealthSection: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => toggleExpand(pillar.id)}
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-900 hover:text-emerald-950 focus:outline-none"
+                        className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-emerald-900 hover:text-emerald-950 focus:outline-none"
                       >
                         <span>{isExpanded ? 'Hide analysis' : 'Understand your score'}</span>
                         <ChevronDown
@@ -296,10 +296,10 @@ export const FinancialHealthSection: React.FC = () => {
                         className="border-t border-charcoal-200/80 bg-canvas-subtle/50 p-6 space-y-6"
                       >
                         {/* 2-Column Desktop Factor Analysis */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[13px]">
                           {/* WHAT'S HELPING */}
                           <div className="space-y-2">
-                            <h5 className="font-mono font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
+                            <h5 className="font-sans tabular-nums font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
                               <CheckCircle2 className="w-4 h-4 text-emerald-800" />
                               WHAT&apos;S HELPING
                             </h5>
@@ -315,7 +315,7 @@ export const FinancialHealthSection: React.FC = () => {
 
                           {/* WHAT NEEDS ATTENTION */}
                           <div className="space-y-2">
-                            <h5 className="font-mono font-bold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
+                            <h5 className="font-sans tabular-nums font-bold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
                               <AlertTriangle className="w-4 h-4 text-amber-700" />
                               WHAT NEEDS ATTENTION
                             </h5>
@@ -336,7 +336,7 @@ export const FinancialHealthSection: React.FC = () => {
                         {/* NEXT BEST MOVE */}
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                           <div className="space-y-1">
-                            <span className="font-mono font-bold uppercase text-[10px] text-emerald-900 tracking-wider flex items-center gap-1">
+                            <span className="font-sans tabular-nums font-bold uppercase text-[12px] text-emerald-900 tracking-wider flex items-center gap-1">
                               <Zap className="w-3.5 h-3.5 text-emerald-800" />
                               NEXT BEST MOVE
                             </span>

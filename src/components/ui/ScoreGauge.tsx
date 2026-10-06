@@ -88,11 +88,11 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
             key={score}
             initial={{ scale: 0.9, opacity: 0.8 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="text-4xl font-bold font-mono tracking-tight text-charcoal-900"
+            className="text-4xl font-bold font-sans tabular-nums tracking-tight text-charcoal-900"
           >
             {score}
           </motion.span>
-          <span className="text-[11px] font-medium uppercase tracking-wider text-charcoal-400 mt-0.5">
+          <span className="text-[12px] font-medium uppercase tracking-wider text-charcoal-400 mt-0.5">
             Out of 100
           </span>
         </div>
@@ -101,7 +101,7 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
       {/* Status Badge & Delta Indicator */}
       <div className="mt-3 flex items-center gap-2">
         <span
-          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${config.bgColor}`}
+          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold border ${config.bgColor}`}
         >
           {config.icon}
           {config.label}
@@ -111,7 +111,7 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
           <motion.span
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
+            className={`text-[13px] font-sans tabular-nums font-bold px-2 py-0.5 rounded ${
               delta > 0
                 ? 'bg-emerald-100 text-emerald-800'
                 : 'bg-rose-100 text-rose-800'

@@ -22,7 +22,7 @@ export const Toggle: React.FC<ToggleProps> = ({
       {(label || description) && (
         <div className="pr-4">
           {label && <p className="text-sm font-medium text-charcoal-800">{label}</p>}
-          {description && <p className="text-xs text-charcoal-500">{description}</p>}
+          {description && <p className="text-[13px] text-charcoal-500">{description}</p>}
         </div>
       )}
       <button

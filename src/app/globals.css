@@ -18,6 +18,20 @@
     width: 100%;
   }
 
+  body {
+    font-size: 16px;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter-tight), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-optical-sizing: auto;
+    text-wrap: pretty;
+  }
+
+  p { text-wrap: pretty; }
+
   *:focus-visible {
     outline: 2px solid #047857;
     outline-offset: 2px;
@@ -28,12 +42,12 @@
 @layer components {
   /* Hero Display Heading: 72px Desktop / 52px Tablet / 40px Mobile */
   .hero-title {
-    @apply text-[40px] sm:text-[52px] lg:text-[72px] font-display font-extrabold tracking-[-0.045em] text-charcoal-950 leading-[0.98] max-w-[720px];
+    @apply text-[38px] sm:text-[52px] lg:text-[72px] font-display font-bold tracking-[-0.045em] text-charcoal-950 leading-[0.98] max-w-[720px];
   }
 
   /* Section Heading: 52px Desktop / 42px Tablet / 32px Mobile */
   .section-title {
-    @apply text-[32px] sm:text-[42px] lg:text-[52px] font-display font-bold tracking-[-0.04em] text-charcoal-950 leading-[1.02];
+    @apply text-[32px] sm:text-[42px] lg:text-[52px] font-display font-bold tracking-[-0.04em] text-charcoal-950 leading-[1.02] max-w-[18ch];
   }
 
   /* Card Heading: 24–28px */
@@ -43,7 +57,7 @@
 
   /* Body Copy: 17–19px */
   .body-editorial {
-    @apply text-[17px] lg:text-[19px] font-sans font-normal leading-[1.6] text-charcoal-600 max-w-2xl;
+    @apply text-[16px] lg:text-[17px] font-sans font-normal leading-[1.6] text-charcoal-600 max-w-[68ch];
   }
 
   /* Navigation Links: 15–16px */

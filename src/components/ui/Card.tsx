@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = 'rounded-2xl border transition-all duration-200';
+  const baseStyles = 'rounded-xl border transition-all duration-200';
 
   const variants = {
     default: 'bg-white border-charcoal-200/80 shadow-subtle',
@@ -28,8 +28,8 @@ export const Card: React.FC<CardProps> = ({
   const paddings = {
     none: 'p-0',
     sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
+    md: 'p-5 sm:p-6',
+    lg: 'p-5 sm:p-6 lg:p-8',
   };
 
   return (

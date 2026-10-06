@@ -121,12 +121,12 @@ export const SavingsDecisionSimulator: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-mono font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
               <span>PHASE 3 EXPERIENCE</span>
               <span className="text-emerald-400">•</span>
               <span>DECISION SIMULATOR</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900">
+            <h2 className="section-title">
               Small decisions can change your future.
             </h2>
             <p className="text-base text-charcoal-600 leading-relaxed">
@@ -146,22 +146,22 @@ export const SavingsDecisionSimulator: React.FC = () => {
 
         {/* Main Interactive Slider Card & Calculations */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Interactive Slider Control (6 cols) */}
-          <Card variant="default" padding="lg" className="lg:col-span-6 space-y-8">
+          {/* Left Column: Interactive Slider Control */}
+          <Card variant="default" padding="lg" className="lg:col-span-5 min-w-0 space-y-8">
             <div className="flex items-center justify-between border-b border-charcoal-100 pb-4">
-              <span className="text-xs font-mono uppercase font-semibold text-charcoal-500">
+              <span className="text-[13px] font-sans tabular-nums uppercase font-semibold text-charcoal-500">
                 MONTHLY SAVINGS SLIDER
               </span>
-              <span suppressHydrationWarning className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+              <span suppressHydrationWarning className="text-[13px] font-sans tabular-nums font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
                 Selected: {formatINR(monthlySavings)}/mo
               </span>
             </div>
 
             {/* Slider Component */}
             <div className="space-y-4">
-              <div className="flex justify-between items-center text-xs text-charcoal-600 font-medium">
+              <div className="flex justify-between items-center text-[13px] text-charcoal-600 font-medium">
                 <span>Adjust monthly savings allocation</span>
-                <span suppressHydrationWarning className="font-mono font-bold text-charcoal-900 text-sm">
+                <span suppressHydrationWarning className="font-sans tabular-nums font-bold text-charcoal-900 text-sm">
                   {formatINR(monthlySavings)}
                 </span>
               </div>
@@ -176,7 +176,7 @@ export const SavingsDecisionSimulator: React.FC = () => {
                 className="w-full h-2.5 bg-charcoal-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
               />
 
-              <div suppressHydrationWarning className="flex justify-between text-xs font-mono text-charcoal-400">
+              <div suppressHydrationWarning className="flex justify-between text-[13px] font-sans tabular-nums text-charcoal-400">
                 <span>{formatINR(1000)}/mo</span>
                 <span>{formatINR(5000)}/mo (Default)</span>
                 <span>{formatINR(10000)}/mo</span>
@@ -186,40 +186,40 @@ export const SavingsDecisionSimulator: React.FC = () => {
             {/* Dynamic Calculations Grid */}
             <div className="grid grid-cols-3 gap-3 pt-4 border-t border-charcoal-100">
               <div className="p-3 bg-canvas-subtle rounded-xl border border-charcoal-200/60 space-y-1 text-center">
-                <span className="text-[10px] font-mono uppercase text-charcoal-400 font-semibold block">1 Year</span>
-                <motion.p key={year1} initial={{ scale: 0.95 }} animate={{ scale: 1 }} suppressHydrationWarning className="font-mono font-bold text-charcoal-900 text-base">
+                <span className="text-[12px] font-sans tabular-nums uppercase text-charcoal-400 font-semibold block">1 Year</span>
+                <motion.p key={year1} initial={{ scale: 0.95 }} animate={{ scale: 1 }} suppressHydrationWarning className="font-sans tabular-nums font-bold text-charcoal-900 text-base">
                   {formatINR(year1)}
                 </motion.p>
               </div>
 
               <div className="p-3 bg-canvas-subtle rounded-xl border border-charcoal-200/60 space-y-1 text-center">
-                <span className="text-[10px] font-mono uppercase text-charcoal-400 font-semibold block">3 Years</span>
-                <motion.p key={year3} initial={{ scale: 0.95 }} animate={{ scale: 1 }} suppressHydrationWarning className="font-mono font-bold text-charcoal-900 text-base">
+                <span className="text-[12px] font-sans tabular-nums uppercase text-charcoal-400 font-semibold block">3 Years</span>
+                <motion.p key={year3} initial={{ scale: 0.95 }} animate={{ scale: 1 }} suppressHydrationWarning className="font-sans tabular-nums font-bold text-charcoal-900 text-base">
                   {formatINR(year3)}
                 </motion.p>
               </div>
 
               <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1 text-center">
-                <span className="text-[10px] font-mono uppercase text-emerald-800 font-bold block">5 Years</span>
-                <motion.p key={year5} initial={{ scale: 0.95 }} animate={{ scale: 1 }} suppressHydrationWarning className="font-mono font-extrabold text-emerald-950 text-base">
+                <span className="text-[12px] font-sans tabular-nums uppercase text-emerald-800 font-bold block">5 Years</span>
+                <motion.p key={year5} initial={{ scale: 0.95 }} animate={{ scale: 1 }} suppressHydrationWarning className="font-sans tabular-nums font-extrabold text-emerald-950 text-base">
                   {formatINR(year5)}
                 </motion.p>
               </div>
             </div>
 
-            <p className="text-[11px] text-charcoal-400 font-mono italic">
+            <p className="text-[12px] text-charcoal-400 font-sans tabular-nums italic">
               * Illustrative demo calculations. Actual compounding may vary based on savings vehicle rates.
             </p>
           </Card>
 
-          {/* Right Column: Dynamic Recharts Timeline Visualization (6 cols) */}
-          <Card variant="highlight" padding="lg" className="lg:col-span-6 space-y-6">
+          {/* Right Column: Dynamic Recharts Timeline Visualization */}
+          <Card variant="highlight" padding="lg" className="lg:col-span-7 min-w-0 space-y-6">
             <div className="flex items-center justify-between border-b border-emerald-200/60 pb-3">
-              <span className="text-xs font-semibold text-emerald-900 flex items-center gap-1.5">
+              <span className="text-[13px] font-semibold text-emerald-900 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-emerald-600" />
                 Accumulated Growth Timeline
               </span>
-              <span suppressHydrationWarning className="text-xs font-mono font-bold text-emerald-800">
+              <span suppressHydrationWarning className="text-[13px] font-sans tabular-nums font-bold text-emerald-800">
                 5-YEAR TOTAL: {formatINR(year5)}
               </span>
             </div>
@@ -241,7 +241,7 @@ export const SavingsDecisionSimulator: React.FC = () => {
                       if (active && payload && payload.length) {
                         const amount = payload[0].value as number;
                         return (
-                          <div className="bg-charcoal-900 text-white p-3 rounded-xl shadow-hover text-xs space-y-1 font-mono border border-charcoal-700">
+                          <div className="bg-charcoal-900 text-white p-3 rounded-xl shadow-hover text-[13px] space-y-1 font-sans tabular-nums border border-charcoal-700">
                             <p className="text-charcoal-300 font-semibold">{payload[0].payload.label} Cumulative Savings</p>
                             <p className="text-emerald-400 font-bold text-sm">{formatINR(amount)}</p>
                           </div>
@@ -267,12 +267,12 @@ export const SavingsDecisionSimulator: React.FC = () => {
       {/* PART 2: Big Decision Purchase Impact Simulator */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 pt-6">
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-xs font-mono font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-800 text-[13px] font-sans tabular-nums font-semibold uppercase tracking-wider">
             <span>PURCHASE IMPACT MODELING</span>
             <span className="text-charcoal-400">•</span>
             <span className="text-emerald-700">SCENARIO TEST</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900">
+          <h2 className="section-title">
             Before you make a big decision, see the impact.
           </h2>
           <p className="text-base text-charcoal-600 leading-relaxed">
@@ -281,28 +281,28 @@ export const SavingsDecisionSimulator: React.FC = () => {
         </div>
 
         {/* Demo Financial Baseline Bar */}
-        <div suppressHydrationWarning className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-2xl bg-canvas-subtle border border-charcoal-200/80 text-xs font-mono">
+        <div suppressHydrationWarning className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-2xl bg-canvas-subtle border border-charcoal-200/80 text-[13px] font-sans tabular-nums">
           <div>
-            <span className="text-charcoal-400 block uppercase text-[10px]">Current Savings</span>
+            <span className="text-charcoal-400 block uppercase text-[12px]">Current Savings</span>
             <span className="font-bold text-charcoal-900 text-sm">{formatINR(BASE_SAVINGS)}</span>
           </div>
           <div>
-            <span className="text-charcoal-400 block uppercase text-[10px]">Monthly Income</span>
+            <span className="text-charcoal-400 block uppercase text-[12px]">Monthly Income</span>
             <span className="font-bold text-charcoal-900 text-sm">{formatINR(BASE_INCOME)}</span>
           </div>
           <div>
-            <span className="text-charcoal-400 block uppercase text-[10px]">Monthly Expenses</span>
+            <span className="text-charcoal-400 block uppercase text-[12px]">Monthly Expenses</span>
             <span className="font-bold text-charcoal-900 text-sm">{formatINR(BASE_EXPENSES)}</span>
           </div>
           <div>
-            <span className="text-charcoal-400 block uppercase text-[10px]">Base Goal Progress</span>
+            <span className="text-charcoal-400 block uppercase text-[12px]">Base Goal Progress</span>
             <span className="font-bold text-emerald-800 text-sm">64%</span>
           </div>
         </div>
 
         {/* Purchase Scenario Selectors */}
         <div className="space-y-4">
-          <label className="text-xs font-mono uppercase font-semibold tracking-wider text-charcoal-500 block">
+          <label className="text-[13px] font-sans tabular-nums uppercase font-semibold tracking-wider text-charcoal-500 block">
             SELECT PURCHASE SCENARIO
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
@@ -326,7 +326,7 @@ export const SavingsDecisionSimulator: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-bold text-sm text-charcoal-900">{sc.label}</p>
-                    <p suppressHydrationWarning className="text-xs font-mono text-charcoal-500">
+                    <p suppressHydrationWarning className="text-[13px] font-sans tabular-nums text-charcoal-500">
                       {sc.key === 'custom' ? 'Custom Input' : formatINR(sc.defaultAmount)}
                     </p>
                   </div>
@@ -341,21 +341,21 @@ export const SavingsDecisionSimulator: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="p-4 rounded-xl bg-canvas-subtle border border-charcoal-200 space-y-2 max-w-md"
             >
-              <label htmlFor={customInputId} className="text-xs font-semibold text-charcoal-700 block">
+              <label htmlFor={customInputId} className="text-[13px] font-semibold text-charcoal-700 block">
                 Enter Custom Purchase Amount (₹)
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-2.5 text-charcoal-400 font-mono font-bold text-sm">₹</span>
+                <span className="absolute left-3 top-2.5 text-charcoal-400 font-sans tabular-nums font-bold text-sm">₹</span>
                 <input
                   id={customInputId}
                   type="text"
                   value={customAmountText}
                   onChange={(e) => handleCustomInput(e.target.value)}
                   placeholder="e.g. 100000"
-                  className="w-full pl-8 pr-4 py-2 rounded-lg border border-charcoal-200 font-mono text-sm text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 bg-white"
+                  className="w-full pl-8 pr-4 py-2 rounded-lg border border-charcoal-200 font-sans tabular-nums text-sm text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 bg-white"
                 />
               </div>
-              {customError && <p className="text-xs text-rose-600 font-medium">{customError}</p>}
+              {customError && <p className="text-[13px] text-rose-600 font-medium">{customError}</p>}
             </motion.div>
           )}
         </div>
@@ -374,7 +374,7 @@ export const SavingsDecisionSimulator: React.FC = () => {
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-charcoal-200/60 pb-4">
             <div>
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-charcoal-500">
+              <span className="text-[13px] font-sans tabular-nums font-bold uppercase tracking-wider text-charcoal-500">
                 SCENARIO IMPACT EVALUATION
               </span>
               <h3 suppressHydrationWarning className="text-xl font-bold text-charcoal-900 mt-0.5">
@@ -397,18 +397,18 @@ export const SavingsDecisionSimulator: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-              <span className="text-xs text-charcoal-500 font-medium block">Remaining Savings</span>
-              <p suppressHydrationWarning className="text-2xl font-bold font-mono text-charcoal-900">
+              <span className="text-[13px] text-charcoal-500 font-medium block">Remaining Savings</span>
+              <p suppressHydrationWarning className="text-2xl font-bold font-sans tabular-nums text-charcoal-900">
                 {formatINR(remainingSavings)}
               </p>
-              <p suppressHydrationWarning className="text-[11px] text-charcoal-400">
+              <p suppressHydrationWarning className="text-[12px] text-charcoal-400">
                 Reduced from initial {formatINR(BASE_SAVINGS)}
               </p>
             </div>
 
             <div className="p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-              <span className="text-xs text-charcoal-500 font-medium block">Recalculated Goal Progress</span>
-              <p suppressHydrationWarning className="text-2xl font-bold font-mono text-charcoal-900">
+              <span className="text-[13px] text-charcoal-500 font-medium block">Recalculated Goal Progress</span>
+              <p suppressHydrationWarning className="text-2xl font-bold font-sans tabular-nums text-charcoal-900">
                 {remainingGoalProgress}%
               </p>
               <div className="w-full bg-charcoal-100 h-1.5 rounded-full overflow-hidden mt-1">
@@ -422,18 +422,18 @@ export const SavingsDecisionSimulator: React.FC = () => {
             </div>
 
             <div className="p-4 bg-white rounded-xl border border-charcoal-200/80 space-y-1">
-              <span className="text-xs text-charcoal-500 font-medium block">Emergency Cushion Status</span>
-              <p suppressHydrationWarning className="text-2xl font-bold font-mono text-charcoal-900">
+              <span className="text-[13px] text-charcoal-500 font-medium block">Emergency Cushion Status</span>
+              <p suppressHydrationWarning className="text-2xl font-bold font-sans tabular-nums text-charcoal-900">
                 {emergencyMonths} Months
               </p>
-              <p suppressHydrationWarning className="text-[11px] text-charcoal-400">
+              <p suppressHydrationWarning className="text-[12px] text-charcoal-400">
                 Based on {formatINR(BASE_EXPENSES)}/mo essential expenses
               </p>
             </div>
           </div>
 
           <div
-            className={`p-4 rounded-xl border flex items-start gap-3 text-xs leading-relaxed ${
+            className={`p-4 rounded-xl border flex items-start gap-3 text-[13px] leading-relaxed ${
               visualState === 'positive'
                 ? 'bg-emerald-50 border-emerald-200 text-emerald-950 font-medium'
                 : visualState === 'neutral'
