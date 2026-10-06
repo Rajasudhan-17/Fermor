@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 247 247 243;
+    --foreground: 21 24 23;
+  }
+
+  html, body {
+    background-color: #F7F7F3;
+    color: #151817;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #047857;
+    outline-offset: 2px;
+  }
+}
+
+/* Centralized Fermor Editorial Typography System */
+@layer components {
+  /* Hero Display Heading: 72px Desktop / 52px Tablet / 40px Mobile */
+  .hero-title {
+    @apply text-[40px] sm:text-[52px] lg:text-[72px] font-display font-extrabold tracking-[-0.045em] text-charcoal-950 leading-[0.98] max-w-[720px];
+  }
+
+  /* Section Heading: 52px Desktop / 42px Tablet / 32px Mobile */
+  .section-title {
+    @apply text-[32px] sm:text-[42px] lg:text-[52px] font-display font-bold tracking-[-0.04em] text-charcoal-950 leading-[1.02];
+  }
+
+  /* Card Heading: 24–28px */
+  .card-title {
+    @apply text-[24px] lg:text-[28px] font-display font-semibold tracking-[-0.025em] text-charcoal-950 leading-[1.08];
+  }
+
+  /* Body Copy: 17–19px */
+  .body-editorial {
+    @apply text-[17px] lg:text-[19px] font-sans font-normal leading-[1.6] text-charcoal-600 max-w-2xl;
+  }
+
+  /* Navigation Links: 15–16px */
+  .nav-editorial {
+    @apply text-[15px] lg:text-[16px] font-sans font-medium text-charcoal-800;
+  }
+
+  /* Button Text: 15–16px */
+  .btn-editorial {
+    @apply text-[15px] lg:text-[16px] font-sans font-semibold;
+  }
+
+  /* Financial Metrics & Dominant Numbers: 32–48px */
+  .metric-headline {
+    @apply text-3xl sm:text-4xl lg:text-[48px] font-display font-bold tabular-nums tracking-[-0.04em] text-charcoal-950;
+  }
+
+  /* Small Eyebrow Labels: 11–13px */
+  .label-eyebrow {
+    @apply text-[11px] lg:text-[12.5px] font-sans font-semibold uppercase tracking-[0.06em] text-emerald-900;
+  }
+}
+
+/* Custom crisp slider input styling */
+input[type="range"] {
+  @apply appearance-none bg-charcoal-200 h-2 rounded-lg cursor-pointer accent-emerald-800 touch-none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 rounded-full bg-emerald-800 shadow-md border-2 border-white transition-transform hover:scale-110 active:scale-95 cursor-pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply appearance-none w-5 h-5 rounded-full bg-emerald-800 shadow-md border-2 border-white border-none transition-transform hover:scale-110 active:scale-95 cursor-pointer;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
